@@ -12,7 +12,7 @@ var message = {
     attachments:[
         {   // use URL as an attachment
             filename: `${filename}.jpg`,
-            path: 'http://genideoctopi.mynetgear.com/webcam/?action=snapshot'
+            path: 'http://127.0.0.1/webcam/?action=snapshot'
         }
     ]
 };
