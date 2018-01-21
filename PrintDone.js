@@ -1,11 +1,5 @@
 let transporter = require('./EmailTransporter');
 
-let filename = process.argv[2] || 'print';
-let filepath = process.argv[3] || 'unknown';
-let origin = process.argv[4] || 'unknown';  // Can either be local or sdcard
-let timeElapsed = getTimeElapsed(process.argv[5]) || 'unknown';
-let time = new Date().toLocaleString('en-US');
-
 var getTimeElapsed = function (totalSeconds) {
     secondsRem = parseFloat(totalSeconds);
     var days = Math.floor(totalSeconds / 3600 / 24);
@@ -34,6 +28,12 @@ var getTimeElapsed = function (totalSeconds) {
 var maybePluralize = function (count, noun, suffix = 's') {
     return `${count} ${noun}${count !== 1 ? suffix : ''}`;  
 };
+
+let filename = process.argv[2] || 'print';
+let filepath = process.argv[3] || 'unknown';
+let origin = process.argv[4] || 'unknown';  // Can either be local or sdcard
+let timeElapsed = getTimeElapsed(process.argv[5]) || 'unknown';
+let time = new Date().toLocaleString('en-US');
 
 var message = {
     to: 'danielhuannguyen@gmail.com',
